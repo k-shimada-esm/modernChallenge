@@ -1,0 +1,33 @@
+https://qiita.com/righteous/items/e5448cb2e7e11ab7d477
+
+1.概要
+
+2.NPMとは
+    NPM ：パッケージレジストリ（Node.js のパッケージが集められた場所）
+    NPM ：CLI（Node.js に付属しているパッケージを操作するためのコマンドラインインターフェイス）
+
+3.NPM(レジストリ)
+    主にブラウザ用のライブラリ、Node.js 用のライブラリが豊富に存在する。
+    公式サイト  ：https://www.npmjs.com/
+
+4.npm(CLI)  [node package manager]
+    Node.js の開発に欠かせないツール。
+
+5.パッケージ
+    外部のパッケージは自分のプロジェクトに含めるのではなく、「このプロジェクトは NPM のこのパッケージに依存している」、という依存情報だけを「宣言」する。
+    依存先のパッケージを dependency (depend=依存する)と呼ぶ。
+
+6.プロジェクト=パッケージ
+    ・npm にとってパッケージは、package.jsonというファイルの親ディレクトリ（ルートディレクトリ）に含まれるファイル群である。
+    ・npm のコマンドは常にルートディレクトリで実行する。
+    ・npm で依存パッケージをインストールすると、ルートディレクトリ直下のnode_modulesディレクトリにダウンロードされる（仮置き場）。
+    ・node_modulesディレクトリは「.gitignore」で Git リポジトリから除外する。また編集してはいけない。
+    ・.npmrc、npm-shrinkwrap.json、package-lock.json などの特別なファイルがある。
+
+7.パッケージの作成
+    ・パッケージを一から作成するにはまずpackage.jsonを作成することから始まる。
+        # 現在のディレクトリに package.json を生成する
+        npm init
+        npm init -y     ･･･質問をすべてスキップする
+
+        
