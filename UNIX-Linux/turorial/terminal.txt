@@ -1,0 +1,525 @@
+----------------------------------------------------------------
+ｃｄ　ｐｗｄ　ｌｓ　の確認
+----------------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge
+$ cd ~
+
+eiwafd084@tsuji-PC MINGW64 ~
+$ pwd
+/c/Users/eiwafd084
+
+eiwafd084@tsuji-PC MINGW64 ~
+$ cd AppData/
+
+eiwafd084@tsuji-PC MINGW64 ~/AppData
+$ pwd
+/c/Users/eiwafd084/AppData
+
+eiwafd084@tsuji-PC MINGW64 ~/AppData
+$ ls
+Local/  LocalLow/  Roaming/
+
+eiwafd084@tsuji-PC MINGW64 ~/AppData
+$ ls -l
+total 16
+drwxr-xr-x 1 eiwafd084 197121 0  5月  4 08:13 Local/
+drwxr-xr-x 1 eiwafd084 197121 0  4月 23  2020 LocalLow/     
+drwxr-xr-x 1 eiwafd084 197121 0 12月 21 22:46 Roaming/      
+
+eiwafd084@tsuji-PC MINGW64 ~/AppData
+$ cd /
+
+eiwafd084@tsuji-PC MINGW64 /
+$ pwd
+/
+
+eiwafd084@tsuji-PC MINGW64 /
+$ ls
+bin/  etc/           LICENSE.txt  ReleaseNotes.html  unins00
+cmd/  git-bash.exe*  mingw64/     tmp/               unins00
+dev/  git-cmd.exe*   proc/        unins000.dat       usr/
+
+eiwafd084@tsuji-PC MINGW64 /
+$ cd ..
+
+eiwafd084@tsuji-PC MINGW64 /
+$ ls
+bin/  etc/           LICENSE.txt  ReleaseNotes.html  unins00
+cmd/  git-bash.exe*  mingw64/     tmp/               unins00
+dev/  git-cmd.exe*   proc/        unins000.dat       usr/
+
+eiwafd084@tsuji-PC MINGW64 /
+$ cd etc
+
+eiwafd084@tsuji-PC MINGW64 /etc
+$ pwd
+/etc
+
+eiwafd084@tsuji-PC MINGW64 /etc
+$ cd ../tmp
+
+eiwafd084@tsuji-PC MINGW64 /tmp
+$ pwd
+/tmp
+
+eiwafd084@tsuji-PC MINGW64 /tmp
+$
+
+----------------------------------------------------------------
+ｌｓのオプションの確認
+----------------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 ~/AppData/Roaming/MySQL/Workbench
+$ ls -l
+total 74
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 cache/
+-rw-r--r-- 1 eiwafd084 197121  1617  6月 26  2021 connections.xml
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 libraries/     
+drwxr-xr-x 1 eiwafd084 197121     0  6月 26  2021 log/
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 modules/       
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 scripts/
+-rw-r--r-- 1 eiwafd084 197121  1386  6月 26  2021 server_instances.xml
+-rw-r--r-- 1 eiwafd084 197121   272  6月 26  2021 shell_bookmarks.txt
+-rw-r--r-- 1 eiwafd084 197121     0  6月 26  2021 shell_history.txt
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 snippets/
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 sql_history/
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 sql_workspaces/
+-rw-r--r-- 1 eiwafd084 197121 51501  6月 26  2021 wb_options.xml
+-rw-r--r-- 1 eiwafd084 197121  1519  6月 26  2021 wb_state.xml
+-rw-r--r-- 1 eiwafd084 197121   230  6月 25  2021 workbench_user_data.dat
+
+eiwafd084@tsuji-PC MINGW64 ~/AppData/Roaming/MySQL/Workbench
+$ ls -lh
+total 74K
+drwxr-xr-x 1 eiwafd084 197121    0  6月 25  2021 cache/
+-rw-r--r-- 1 eiwafd084 197121 1.6K  6月 26  2021 connections.xml
+drwxr-xr-x 1 eiwafd084 197121    0  6月 25  2021 libraries/
+drwxr-xr-x 1 eiwafd084 197121    0  6月 26  2021 log/
+drwxr-xr-x 1 eiwafd084 197121    0  6月 25  2021 modules/
+drwxr-xr-x 1 eiwafd084 197121    0  6月 25  2021 scripts/
+-rw-r--r-- 1 eiwafd084 197121 1.4K  6月 26  2021 server_instances.xml
+-rw-r--r-- 1 eiwafd084 197121  272  6月 26  2021 shell_bookmarks.txt
+-rw-r--r-- 1 eiwafd084 197121    0  6月 26  2021 shell_history.txt
+drwxr-xr-x 1 eiwafd084 197121    0  6月 25  2021 snippets/
+drwxr-xr-x 1 eiwafd084 197121    0  6月 25  2021 sql_history/
+drwxr-xr-x 1 eiwafd084 197121    0  6月 25  2021 sql_workspaces/
+-rw-r--r-- 1 eiwafd084 197121  51K  6月 26  2021 wb_options.xml
+-rw-r--r-- 1 eiwafd084 197121 1.5K  6月 26  2021 wb_state.xml
+-rw-r--r-- 1 eiwafd084 197121  230  6月 25  2021 workbench_user_data.dat
+
+eiwafd084@tsuji-PC MINGW64 ~/AppData/Roaming/MySQL/Workbench
+$ ls -la
+total 78
+drwxr-xr-x 1 eiwafd084 197121     0  6月 26  2021 ./
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 ../
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 cache/
+-rw-r--r-- 1 eiwafd084 197121  1617  6月 26  2021 connections.xml
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 libraries/
+drwxr-xr-x 1 eiwafd084 197121     0  6月 26  2021 log/
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 modules/
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 scripts/
+-rw-r--r-- 1 eiwafd084 197121  1386  6月 26  2021 server_instances.xml
+-rw-r--r-- 1 eiwafd084 197121   272  6月 26  2021 shell_bookmarks.txt
+-rw-r--r-- 1 eiwafd084 197121     0  6月 26  2021 shell_history.txt
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 snippets/
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 sql_history/
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 sql_workspaces/
+-rw-r--r-- 1 eiwafd084 197121 51501  6月 26  2021 wb_options.xml
+-rw-r--r-- 1 eiwafd084 197121  1519  6月 26  2021 wb_state.xml
+-rw-r--r-- 1 eiwafd084 197121   230  6月 25  2021 workbench_user_data.dat
+
+eiwafd084@tsuji-PC MINGW64 ~/AppData/Roaming/MySQL/Workbench
+$ ls -lR
+.:
+total 74
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 cache/
+-rw-r--r-- 1 eiwafd084 197121  1617  6月 26  2021 connections.xml
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 libraries/
+drwxr-xr-x 1 eiwafd084 197121     0  6月 26  2021 log/
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 modules/
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 scripts/
+-rw-r--r-- 1 eiwafd084 197121  1386  6月 26  2021 server_instances.xml
+-rw-r--r-- 1 eiwafd084 197121   272  6月 26  2021 shell_bookmarks.txt
+-rw-r--r-- 1 eiwafd084 197121     0  6月 26  2021 shell_history.txt
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 snippets/
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 sql_history/
+drwxr-xr-x 1 eiwafd084 197121     0  6月 25  2021 sql_workspaces/
+-rw-r--r-- 1 eiwafd084 197121 51501  6月 26  2021 wb_options.xml
+-rw-r--r-- 1 eiwafd084 197121  1519  6月 26  2021 wb_state.xml
+-rw-r--r-- 1 eiwafd084 197121   230  6月 25  2021 workbench_user_data.dat
+
+./cache:
+total 12
+-rw-r--r-- 1 eiwafd084 197121 12288  6月 25  2021 Local_instance_MySQL80.column_widths
+
+./libraries:
+total 0
+
+./log:
+total 33
+-rw-r--r-- 1 eiwafd084 197121  514  6月 25  2021 sql_actions_Local_instance_MySQL80.log
+-rw-r--r-- 1 eiwafd084 197121 7725  6月 25  2021 wb.1.log
+-rw-r--r-- 1 eiwafd084 197121 5155  6月 25  2021 wb.2.log
+-rw-r--r-- 1 eiwafd084 197121 7045  6月 25  2021 wb.3.log
+-rw-r--r-- 1 eiwafd084 197121 5113  6月 26  2021 wb.log
+
+./modules:
+total 0
+
+./scripts:
+total 0
+
+./snippets:
+total 20
+-rw-r--r-- 1 eiwafd084 197121 2564  6月 25  2021 'DB Management.txt'
+-rw-r--r-- 1 eiwafd084 197121 9700  6月 25  2021 'SQL DDL Statements.txt'
+-rw-r--r-- 1 eiwafd084 197121 3814  6月 25  2021 'SQL DML Statements.txt'
+
+./sql_history:
+total 1
+-rw-r--r-- 1 eiwafd084 197121 192  6月 25  2021 2021-06-25
+
+./sql_workspaces:
+total 8
+drwxr-xr-x 1 eiwafd084 197121 0  6月 25  2021 Local_instance_MySQL80-1.workspace/
+drwxr-xr-x 1 eiwafd084 197121 0  6月 25  2021 Local_instance_MySQL80-2.workspace/
+
+./sql_workspaces/Local_instance_MySQL80-1.workspace:
+total 6
+-rw-r--r-- 1 eiwafd084 197121 109  6月 25  2021 {067A3D07-3738-49C6-8CD7-B617C3B6D819}.info
+-rw-r--r-- 1 eiwafd084 197121   0  6月 25  2021 {067A3D07-3738-49C6-8CD7-B617C3B6D819}.scratch
+-rw-r--r-- 1 eiwafd084 197121 110  6月 25  2021 {4FA6A6A3-6D19-4789-B079-C2963B4EF9F3}.info
+-rw-r--r-- 1 eiwafd084 197121  43  6月 25  2021 {4FA6A6A3-6D19-4789-B079-C2963B4EF9F3}.scratch
+-rw-r--r-- 1 eiwafd084 197121  38  6月 25  2021 connection_id
+-rw-r--r-- 1 eiwafd084 197121  73  6月 25  2021 schema_tree
+-rw-r--r-- 1 eiwafd084 197121  80  6月 25  2021 tab_order
+
+./sql_workspaces/Local_instance_MySQL80-2.workspace:
+total 4
+-rw-r--r-- 1 eiwafd084 197121 109  6月 25  2021 {5C75591F-A8BA-4EBC-9FE3-0E4B0ACFF670}.info
+-rw-r--r-- 1 eiwafd084 197121   0  6月 25  2021 {5C75591F-A8BA-4EBC-9FE3-0E4B0ACFF670}.scratch
+-rw-r--r-- 1 eiwafd084 197121  38  6月 25  2021 connection_id
+-rw-r--r-- 1 eiwafd084 197121  66  6月 25  2021 schema_tree
+-rw-r--r-- 1 eiwafd084 197121  40  6月 25  2021 tab_order
+
+eiwafd084@tsuji-PC MINGW64 ~/AppData/Roaming/MySQL/Workbench
+$
+
+----------------------------------------------------------------
+ｃｐ　ｍｖ　ｒｍ　の確認
+----------------------------------------------------------------
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge
+$ cd UNIX-Linux/turorial/
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ ls -lR
+.:
+total 1
+drwxr-xr-x 1 eiwafd084 197121 0  5月  4 15:04 AAA/
+-rw-r--r-- 1 eiwafd084 197121 0  5月  4 14:44 bash.txt
+-rw-r--r-- 1 eiwafd084 197121 5  5月  4 15:04 test.txt
+
+./AAA:
+total 1
+-rw-r--r-- 1 eiwafd084 197121 11  5月  4 15:05 test.txt
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ cp -i test.txt AAA/test.txt 
+cp: overwrite 'AAA/test.txt'? 
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ cp -i test.txt AAA/test.txt 
+cp: overwrite 'AAA/test.txt'? n
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ cp -i test.txt AAA/test.txt 
+cp: overwrite 'AAA/test.txt'? y
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ mv -i test.txt AAA/test.txt 
+mv: overwrite 'AAA/test.txt'? 
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ mv -i test.txt AAA/test.txt 
+mv: overwrite 'AAA/test.txt'? n
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ mv -i test.txt AAA/test.txt 
+mv: overwrite 'AAA/test.txt'? y
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ rm -i AAA/test.txt
+rm: remove regular file 'AAA/test.txt'? 
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ rm -i AAA/test.txt  
+rm: remove regular file 'AAA/test.txt'? n
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ rm -i AAA/test.txt  
+rm: remove regular file 'AAA/test.txt'? y
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$
+
+----------------------------------------------------------------
+テキスト関係
+ｍａｎ　ｄａｔｅ　ｍｏｒｅ　ｌｅｓｓ　ｃａｔ
+----------------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux    
+$ man cp
+bash: man: command not found
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux    
+$ date
+2022年 5月  4日 水曜日 15:27:02
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux    
+$ more コマンドでできること.txt
+bash: more: command not found
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux    
+$ less コマンドでできること.txt
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux
+$ cat コマンドでできること.txt 
+1.標準入力、標準出力、標準エラー出力、パイプ
+    標準入力　：コマンドへの情報の入力源
+    標準出力　：コマンドが出力した結果を返すところ
+    標準エラー出力　：プログラム上エラーとして指示された出力
+    パイプ　　：あるコマンドの標準出力を別のコマンドの標準入
+力につなげる
+
+2.変数
+    変数名の前にドル記号$をつける
+
+3.環境変数
+    大文字で指定する。環境変数を確認するには、echoコマンドを
+使う。
+
+4.ユーザー
+    whiami コマンドで現在ログインのユーザが分かる。
+
+5.パーミッション
+    読み取り(r)、書き込み(w)、実行(x)
+        ※ファイルの消去に必要な権限はディレクトリへの書き込 
+み権限であることに注意
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux    
+$
+
+----------------------------------------------------------------
+テキスト操作
+ｔｒ　ｃｕｔ
+----------------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial/AAA
+$ cat bbb.txt 
+banana
+orange
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial/AAA
+$ tr a b < bbb.txt 
+bbnbnb
+orbnge
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial/AAA
+$ cut -c 5 bbb.txt 
+n
+g
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial/AAA
+$ cut -f 2 -d 'n' bbb.txt
+a
+ge
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial/AAA
+$ cut -f 1 -d 'n' bbb.txt
+ba
+ora
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial/AAA
+$
+
+----------------------------------------------------------------
+ファイル操作
+ｍｋｄｉｒ　ｒｍｄｉｒ　ｔｏｕｃｈ
+----------------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ mkdir BBB
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ ls -lR
+.:
+total 12
+drwxr-xr-x 1 eiwafd084 197121     0  5月  4 15:33 AAA/      
+drwxr-xr-x 1 eiwafd084 197121     0  5月  4 15:40 BBB/      
+-rw-r--r-- 1 eiwafd084 197121 11882  5月  4 15:36 terminal.txt
+
+./AAA:
+total 1
+-rw-r--r-- 1 eiwafd084 197121 14  5月  4 15:33 bbb.txt      
+
+./BBB:
+total 0
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ rmdir BBB/
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ ls -lR
+.:
+total 12
+drwxr-xr-x 1 eiwafd084 197121     0  5月  4 15:33 AAA/
+-rw-r--r-- 1 eiwafd084 197121 11882  5月  4 15:36 terminal.txt
+
+./AAA:
+total 1
+-rw-r--r-- 1 eiwafd084 197121 14  5月  4 15:33 bbb.txt      
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ mkdir BBB
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ ls -lR
+.:
+total 12
+drwxr-xr-x 1 eiwafd084 197121     0  5月  4 15:33 AAA/      
+drwxr-xr-x 1 eiwafd084 197121     0  5月  4 15:41 BBB/
+-rw-r--r-- 1 eiwafd084 197121 11882  5月  4 15:36 terminal.txt
+
+./AAA:
+total 1
+-rw-r--r-- 1 eiwafd084 197121 14  5月  4 15:33 bbb.txt      
+
+./BBB:
+total 0
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ rm -id BBB
+rm: remove directory 'BBB'? y
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ ls -lR
+.:
+total 12
+drwxr-xr-x 1 eiwafd084 197121     0  5月  4 15:33 AAA/
+-rw-r--r-- 1 eiwafd084 197121 11882  5月  4 15:36 terminal.txt
+
+./AAA:
+total 1
+-rw-r--r-- 1 eiwafd084 197121 14  5月  4 15:33 bbb.txt      
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ cd AAA/
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial/AAA
+$ ls -lR
+.:
+total 1
+-rw-r--r-- 1 eiwafd084 197121 14  5月  4 15:33 bbb.txt
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial/AAA
+$ touch a b c
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial/AAA
+$ ls -lR
+.:
+total 1
+-rw-r--r-- 1 eiwafd084 197121  0  5月  4 15:43 a
+-rw-r--r-- 1 eiwafd084 197121  0  5月  4 15:43 b
+-rw-r--r-- 1 eiwafd084 197121 14  5月  4 15:33 bbb.txt      
+-rw-r--r-- 1 eiwafd084 197121  0  5月  4 15:43 c
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial/AAA
+$ touch a bb cc
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial/AAA
+$ ls -lR
+.:
+total 1
+-rw-r--r-- 1 eiwafd084 197121  0  5月  4 15:43 a
+-rw-r--r-- 1 eiwafd084 197121  0  5月  4 15:43 b
+-rw-r--r-- 1 eiwafd084 197121  0  5月  4 15:43 bb
+-rw-r--r-- 1 eiwafd084 197121 14  5月  4 15:33 bbb.txt      
+-rw-r--r-- 1 eiwafd084 197121  0  5月  4 15:43 c
+-rw-r--r-- 1 eiwafd084 197121  0  5月  4 15:43 cc
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial/AAA
+$
+
+----------------------------------------------------------------
+正規表現
+ｇｒｅｐ　ｆｉｎｄ
+----------------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial/AAA
+$ cat bb
+abcd
+efg
+hijk
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial/AAA
+$ cat bbb.txt 
+banana
+orange
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial/AAA
+$ cat cc
+opqr
+stu
+vwxyz
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial/AAA
+$ grep a *
+bb:abcd
+bbb.txt:banana
+bbb.txt:orange
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial/AAA
+$ find . -name 'b*'
+./b
+./bb
+./bbb.txt
+
+----------------------------------------------------------------
+シェルスクリプト
+----------------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ cat hw.sh 
+#!/bin/bash
+echo hello
+uname
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux/turorial
+$ bash hw.sh
+hello
+MINGW64_NT-10.0-19044
+
+----------------------------------------------------------------
+プロセス管理
+----------------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux
+$ ps
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+     2074    2048    2074       6408  cons1     197610 09:59:09 /usr/bin/ps
+     2048       1    2048       4532  cons1     197610 09:59:03 /usr/bin/bash
+     1995       1    1995      14928  cons0     197610 09:58:29 /usr/bin/bash
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux
+$ ps ax
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+     2078    2048    2078       6324  cons1     197610 09:59:13 /usr/bin/ps
+     2048       1    2048       4532  cons1     197610 09:59:03 /usr/bin/bash
+     1995       1    1995      14928  cons0     197610 09:58:29 /usr/bin/bash
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux
+$ ps
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+     2094       1    2094      15852  cons2     197610 10:01:30 /usr/bin/bash
+     2048       1    2048       4532  cons1     197610 09:59:03 /usr/bin/bash
+     1995       1    1995      14928  cons0     197610 09:58:29 /usr/bin/bash
+     2117    2048    2117      16920  cons1     197610 10:01:40 /usr/bin/ps
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux
+$ kill 2094
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/UNIX-Linux
+$ ps
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+     2048       1    2048       4532  cons1     197610 09:59:03 /usr/bin/bash
+     1995       1    1995      14928  cons0     197610 09:58:29 /usr/bin/bash
+     2125    2048    2125      15928  cons1     197610 10:02:55 /usr/bin/ps
