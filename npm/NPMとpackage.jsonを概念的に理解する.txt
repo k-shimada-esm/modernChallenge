@@ -30,4 +30,54 @@ https://qiita.com/righteous/items/e5448cb2e7e11ab7d477
         npm init
         npm init -y     ･･･質問をすべてスキップする
 
-        
+8.package.json の中身
+    ・バージョン
+        Semver (Semantic Versioning) 
+            「(Major).(Minor).(Patch)」
+                Major：API変更（使う側のコードを修正）
+                Minor：新機能の追加
+                Patch：バグ修正
+        package.json に指定されたバージョンにマッチする中で最も新しいバージョンがインストールされる。
+            99.99.99 ：指定バージョンのみ
+            ^99.99.99：「Major は一致し Minor と Patch は指定されたもの以上」
+            ~99.99.99：「Major と Minor は一致し Patch は指定されたもの以上」
+    ・dependencies & devDependencies
+       ※dependencies と devDependencies をまとめて dependency と呼ぶ。
+       ※どのパッケージが実行に必要なのかを意識し dep と devDep を使い分けること。
+        dependencies    ：実行に必要なパッケージ
+        devDependencies ：開発やテストにのみ必要なパッケージ
+    ・scripts
+        npm run <name>  ：何度も実行するコマンドは script として登録すると開発を効率化できる。
+    ・main
+        そのパッケージを外からインポートするときにどの JavaScript ファイルが入り口であるかを指定するもの。
+    ・bin
+        パッケージを外から使うときにのみ重要になる項目である。
+        パッケージ A の package.json の bin に何らかの実行可能ファイルが指定されていると、パッケージ A をインストールすればそれを CLI として実行できるようになる。
+10.dependency の編集
+    dependency を追加・削除・アップデートしたいときは直接package.jsonを編集しない。
+    npm コマンドで dependency を変更すると自動的にpackage.jsonにも反映される。
+      ※package.jsonを直接編集した場合は再度npm installを実行してnode_modules内のファイルを更新する必要がある。
+11.dependency の追加/バージョン変更
+    npm install <package>       ：dependencies に追加
+    npm install -D <package>    ：devDependencies に追加
+    npm install react@16.8.6    ：react の v16.8.6 を追加
+    npm install react@latest    ：react の最新バージョンを追加
+12.package-lock.json
+    ・dependency のバージョンを lock(ロック、固定)するためのファイルであり、npm installの実行時に自動的に作成される。
+    ・package.json指定されたバージョンとpackage-lock.jsonに矛盾があれば、package.jsonが優先される。
+      実際にインストールされたバージョンがpackage-lock.jsonに書かれる。
+13.結局いつ npm install するのか
+    ・npm install (パッケージ名なし)
+        package.json と package-lock.json に基づいて dependency がすべてローカル(node_modules)にインストールされる。
+    ・npm install <パッケージ名>
+        そのパッケージがローカルにインストールされる。
+        「dependency は既にすべてインストールされており、新しく dependency を追加したいとき」に行う。
+14.GitHub でパッケージのコードを見るときの注意点
+    【例】express npm package (https://www.npmjs.com/package/express)
+            github.com/expressjs/express
+    ・package.jsonのscriptsを見ればどのようなビルド処理をしたのか推測することもできる。
+    ・パッケージの repository はしばしば NPM でのバージョンに対応した tag がつけられており、特定のバージョンのソースコードを見たいときに便利である。
+    ・「npm audit」
+        プロジェクトのディレクトリ内で使用している npm パッケージのセキュリティをチェックするコマンドです。
+         npm auditコマンドを実行して問題のあるパッケージが見つかった場合、通常はパッケージを更新して対応することになります。
+          ※「報告されている」脆弱性しか考慮されないので安心はできない。

@@ -1,0 +1,118 @@
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy (npm)
+$ npm -v
+8.1.2
+
+------------------------------------------------------
+パッケージの作成
+------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy (npm)
+$ npm init -y
+Wrote to D:\modernChallenge\npm\npmStudy\package.json:
+
+{
+  "name": "npmstudy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"    
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+------------------------------------------------------
+dependency の追加/バージョン変更
+------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy (npm)
+$ npm install react@latest
+
+added 3 packages, and audited 4 packages in 4s
+
+found 0 vulnerabilities
+
+※package.json 追加された内容
+{
+    ：
+  "dependencies": {
+    "react": "^18.1.0"
+  }
+}
+
+※作成されたnode_modulesディレクトリの内容
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy/node_modules (npm)
+$ ls -R
+.:
+js-tokens/  loose-envify/  react/
+
+./js-tokens:
+CHANGELOG.md  index.js  LICENSE  package.json  README.md
+
+./loose-envify:
+cli.js*    index.js  loose-envify.js  README.md
+custom.js  LICENSE   package.json     replace.js
+
+./react:
+cjs/                jsx-runtime.js  react.shared-subset.js
+index.js            LICENSE         README.md
+jsx-dev-runtime.js  package.json    umd/
+
+./react/cjs:
+react.development.js
+react.production.min.js
+react.shared-subset.development.js
+react.shared-subset.production.min.js
+react-jsx-dev-runtime.development.js
+react-jsx-dev-runtime.production.min.js
+react-jsx-dev-runtime.profiling.min.js
+react-jsx-runtime.development.js
+react-jsx-runtime.production.min.js
+react-jsx-runtime.profiling.min.js
+
+./react/umd:
+react.development.js     react.profiling.min.js
+react.production.min.js
+
+------------------------------------------------------
+GitHub でパッケージのコードを見るときの注意点
+------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy/node_modules (npm)
+$ npm install express@latest
+
+added 57 packages, and audited 61 packages in 11s
+
+7 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+※package.json 追加された内容
+  "dependencies": {
+    "express": "^4.18.1",
+    "react": "^18.1.0"
+  }
+}
+
+※「express」のpackage.json の scripts 内容
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha --require test/support/env --reporter spec --bail --check-leaks test/ test/acceptance/",
+    "test-ci": "nyc --reporter=lcovonly --reporter=text npm test",
+    "test-cov": "nyc --reporter=html --reporter=text npm test",
+    "test-tap": "mocha --require test/support/env --reporter tap --check-leaks test/ test/acceptance/"
+  }
+}
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy (npm)
+$ npm audit
+found 0 vulnerabilities
+
+------------------------------------------------------
+node_modules のコミット除外
+------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge (npm)
+$ touch .gitignore
+
+※.gitignore の修正
+  「node_modules/」の除外を追加
