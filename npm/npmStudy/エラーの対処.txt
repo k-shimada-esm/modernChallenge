@@ -1,0 +1,11 @@
+★「npm help init」を実行した時、npmエラーが発生した。
+    [エラー内容]
+      npm err! invalid url: file://c:%5cprogram%20files%5cnodejs%5cnode_modules%5cnpm%5cdocs%5coutput%5ccommands%5cnpm-init.html
+    [原因]
+     「npm-init.html」を開こうとしたが「c:\program-files\nodejs\node_modules\npm\docs\output\commands」に存在しなかったのが原因ではないか。
+    [対処]
+    ・node.jsのバージョンを確認　⇒ 14.??.0 (ちょっと覚えていない)
+    ・node.jsのバージョンアップを実施   ⇒ 16.15.0
+    [確認]
+      再度「npm help init」を実施
+        「file:///C:/Users/eiwafd084/AppData/Roaming/npm/node_modules/npm/docs/output/commands/npm-init.html」が開いた。

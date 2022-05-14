@@ -1,0 +1,44 @@
+https://www.webdesignleaves.com/pr/jquery/npm_basic.html
+
+1.npm とは [Node Package Manager]
+    ・Node.js のパッケージ（Package）を管理するツール。
+    ・パッケージとは Node.js で利用できる JavaScript のライブラリやフレームワークなどのこと。
+    ・各種ライブラリなどの依存関係を管理・解決してくれる。
+    ・パッケージの検索や更新、バージョン管理、アンインストールなどもできる。
+
+    $ npm version       ： npm, node のバージョン確認
+    $ npm help (コマンド名 or キーワード) ： オンラインヘルプが起動される。
+    $ npm コマンド -h   ： クイック（簡易）ヘルプ
+
+2.パッケージのインストール
+    $ npm install -g パッケージ名   ： グローバルインストール
+                                      全てのプロジェクトで同じパッケージを使う。
+    $ npm list -g --depth=0        ： グローバルインストールの確認。--depth=0 は一番上の階層のみ。
+    $ npm install パッケージ名  ： ローカルインストール（プロジェクトのディレクトリで実行）
+                                  対象のプロジェクトでのみインストールしたパッケージを使用する。
+    $ npm list  ： カレントディレクトリのインストール確認。
+
+    ・package.json にはそのプロジェクトでインストールしたパッケージの情報が追加され、
+    　インストールした際のオプション（本番環境用、開発環境用、プロジェクト固有など）も追加される。
+    ・package-lock.json が自動的に生成され、このファイルを使ってパッケージのバージョンを固定する。
+
+3.ローカルインストール
+    ・パッケージをインストールすると node_modules ディレクトリが自動的に作成される。パッケージ関連のファイルが格納される。
+    　「package.json」が存在しない時は作成すること。
+    $ npm init                          ： package.json の生成
+    $ npm install パッケージ名 return    ： 指定パッケージをインストール
+    $ npm install                       ： プロジェクトのコピー。
+                                           パッケージ名を指定せずに実行すると、package.json に記述されたパッケージを一括インストール。
+
+4.初期化 npm init
+    【package.json のフィールド】
+        version     ：バージョン
+        description ：説明
+        main        ：公開するパッケージのエントリポイント（Default：index.js）
+        scripts 	：npm run 〜 や npm start などで実行できるスクリプトを定義するフィールド。
+                    　Default：（test コマンド。ドキュメントルートに server.js があれば "start": "node server.js"）
+        keywords	：npm パッケージハブでの検索に使われるキーワード
+        author	    ：制作者
+        license	    ：ソフトウェア・ライセンス
+        	        　（Default：ISC（フリーソフトウェアライセンス））
+        

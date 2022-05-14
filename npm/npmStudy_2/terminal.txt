@@ -1,0 +1,162 @@
+------------------------------------------------------
+npm とは
+------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm (npm)        
+$ npm -v
+8.10.0
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm (npm)        
+$ npm version 
+{
+  npm: '8.10.0',
+  node: '16.15.0',
+  v8: '9.4.146.24-node.20',
+  uv: '1.43.0',
+  zlib: '1.2.11',
+  brotli: '1.0.9',
+  ares: '1.18.1',
+  modules: '93',
+  nghttp2: '1.47.0',
+  napi: '8',
+  llhttp: '6.0.4',
+  openssl: '1.1.1n+quic',
+  cldr: '40.0',
+  icu: '70.1',
+  tz: '2021a3',
+  unicode: '14.0',
+  ngtcp2: '0.1.0-DEV',
+  nghttp3: '0.1.0-DEV'
+}
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm (npm)        
+$ npm
+npm <command>
+
+Usage:
+
+npm install        install all the dependencies in your projectnpm install <foo>  add the <foo> dependency to your project    
+npm test           run this project's tests
+npm run <foo>      run the script named <foo>
+npm <command> -h   quick help on <command>
+npm -l             display usage info for all commands
+npm help <term>    search for help on <term> (in a browser)    
+npm help npm       more involved overview (in a browser)       
+
+All commands:
+
+    access, adduser, audit, bin, bugs, cache, ci,
+    completion, config, dedupe, deprecate, diff,
+    dist-tag, docs, doctor, edit, exec, explain,
+    explore, find-dupes, fund, get, help, hook,
+    init, install, install-ci-test, install-test,
+    link, ll, login, logout, ls, org, outdated,
+    owner, pack, ping, pkg, prefix, profile, prune,
+    publish, rebuild, repo, restart, root,
+    run-script, search, set, set-script,
+    shrinkwrap, star, stars, start, stop, team,
+    test, token, uninstall, unpublish, unstar,
+    update, version, view, whoami
+
+Specify configs in the ini-formatted file:
+    C:\Users\eiwafd084\.npmrc
+or on the command line via: npm <command> --key=value
+
+More configuration info: npm help config
+Configuration fields: npm help 7 config
+
+npm@8.10.0 C:\Users\eiwafd084\AppData\Roaming\npm\node_modules\npm
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm (npm)        
+$ npm help init
+※「file:///C:/Users/eiwafd084/AppData/Roaming/npm/node_modules/npm/docs/output/commands/npm-init.html」が開いた。
+
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm (npm)        
+$ npm init -h
+Create a package.json file
+
+Usage:
+npm init [--force|-f|--yes|-y|--scope]
+npm init <@scope> (same as `npx <@scope>/create`)
+npm init [<@scope>/]<name> (same as `npx [<@scope>/]create-<name>`)
+
+Options:
+[-y|--yes] [-f|--force]
+[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+[-ws|--workspaces] [--include-workspace-root]
+
+aliases: create, innit
+
+Run "npm help init" for more info
+
+------------------------------------------------------
+パッケージのインストール
+------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm (npm)        
+$ npm root -g
+C:\Users\eiwafd084\AppData\Roaming\npm\node_modules
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm (npm)        
+$ npm list -g --depth=0
+C:\Users\eiwafd084\AppData\Roaming\npm
+├── @google/clasp@2.4.1
+├── @vue/cli@4.5.13
+└── npm@8.10.0
+
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm (npm)        
+$ npm root 
+D:\modernChallenge\npm\node_modules
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm (npm)        
+$ npm list
+D:\modernChallenge\npm
+└── (empty)
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy (npm)
+$ npm root
+D:\modernChallenge\npm\npmStudy\node_modules
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy (npm)
+$ npm list
+npmstudy@1.0.0 D:\modernChallenge\npm\npmStudy
+├── express@4.18.1
+└── react@18.1.0
+
+------------------------------------------------------
+ローカルインストール
+------------------------------------------------------
+※実行前に「npmStudy」の「package.json」を「npmStudy_2/projectCopy」にコピーする。
+　プロジェクトのコピーがされるはず。
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy (npm)
+$ cd ../npmStudy_2/
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2 (npm)
+$ cd projectCopy/
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/projectCopy (npm)
+$ ls
+package.json
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/projectCopy (npm)
+$ npm install
+
+added 60 packages, and audited 61 packages in 10s
+
+7 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/projectCopy (npm)
+$ ls
+node_modules/  package.json  package-lock.json
+
+
+------------------------------------------------------
+初期化 npm init
+------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/projectCopy (npm)
+$ npm help package.json
+※「file:///C:/Users/eiwafd084/AppData/Roaming/npm/node_modules/npm/docs/output/configuring-npm/package-json.html」が開いた。
