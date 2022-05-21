@@ -41,4 +41,39 @@ https://www.webdesignleaves.com/pr/jquery/npm_basic.html
         author	    ：制作者
         license	    ：ソフトウェア・ライセンス
         	        　（Default：ISC（フリーソフトウェアライセンス））
-        
+   
+    ①インストール、バージョンを指定してインストール
+        $ npm install   ：パッケージ名 パッケージ名 パッケージ名...
+        $ npm install   ：パッケージ名@バージョン
+        $ npm install   ：パッケージ名@">=バージョン <バージョン"
+    ②install コマンドオプション
+        --save-prod ※-P ：省略時。
+                           package.json の dependencies に追加される。
+                           ※Production（本番環境）の意味。
+        --save-dev  ※-D ：テストツールなど開発環境で使う（開発時に依存する）パッケージに指定。
+                           package.json の devDependencies に追加される。
+                           ※Development（開発環境）の意味。
+                           ※npm install で --production オプションを指定するとこのパッケージはインストールされない。
+        --save-optional ※-O ：オプショナルなパッケージに指定する。
+                           package.json の optionalDependencies に追加される。
+                           npm install でインストールできないときはスキップされる。
+        --no-save       ：package.json に書き込まない（パッケージ管理をしない）場合に指定する。
+                          package.json に追加されない。
+                          npm install でインストールされない。
+        上記オプションに同時指定可能。
+        --save-exact ※-E    ：dependencies / devDependencies のバージョン指定に（同じメジャーバージョンの最新版/semver range ではなく）
+                               正確なバージョンのみを依存の対象とする（明示的なバージョン固定）。
+
+
+    ③プロジェクトの複製・コピー
+        ・既存の package.json を新プロジェクトのルートディレクトリに配置して、
+          パッケージ名を指定せずにインストールコマンドを実行すれば
+          同じパッケージで構成されるプロジェクトを複製することができる。
+          ※その時点での同じメジャーバージョンの最新版がインストールされる。
+            package.json は変更されない。
+          ※既存の package-lock.json もコピーすれば、同じバージョンがインストールされる。
+        ・npm install で --production オプションを指定して実行すると 
+          package.json の devDependencies に記載されているパッケージはインストールされない。
+
+
+
