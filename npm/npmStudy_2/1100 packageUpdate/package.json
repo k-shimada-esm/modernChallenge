@@ -1,0 +1,18 @@
+{
+  "name": "1100-packageupdate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.52.2",
+    "sax": "^1.2.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+}

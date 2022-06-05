@@ -41,7 +41,7 @@ https://www.webdesignleaves.com/pr/jquery/npm_basic.html
         author	    ：制作者
         license	    ：ソフトウェア・ライセンス
         	        　（Default：ISC（フリーソフトウェアライセンス））
-   
+
     ①インストール、バージョンを指定してインストール
         $ npm install   ：パッケージ名 パッケージ名 パッケージ名...
         $ npm install   ：パッケージ名@バージョン
@@ -72,8 +72,102 @@ https://www.webdesignleaves.com/pr/jquery/npm_basic.html
           ※その時点での同じメジャーバージョンの最新版がインストールされる。
             package.json は変更されない。
           ※既存の package-lock.json もコピーすれば、同じバージョンがインストールされる。
-        ・npm install で --production オプションを指定して実行すると 
+        ・npm install で --production オプションを指定して実行すると
           package.json の devDependencies に記載されているパッケージはインストールされない。
+5.パッケージの検索 search
+    ・パッケージの検索 search
+        npm search パッケージ名（キーワード）
+    ・パッケージの詳細情報 view
+        npm view パッケージ
+    ・パッケージの最新バージョンを表示
+        npm view パッケージ version
+    ・インストール可能なパッケージのバージョンを表示
+        npm view パッケージ versions
+6.package.json
+    ・ package.json のフィールド
+        name	        名前（必須）
+        version	        バージョン（必須）
+        description	    作成したパッケージの説明
+        main	        パッケージのエントリーポイントをパッケージルートからの相対パスで指定。
+                        ユーザーがそのパッケージをインストールし、require() を実行した時に
+                        main で指定したモジュールの exports オブジェクトが返される。
+                        そのパッケージを NPM で公開しない場合は指定しなくても問題ない。
+        scripts 	    npm run 〜 や npm start などで実行できるスクリプトを定義するフィールド。
+        keywords	    npm パッケージハブでの検索に使われるキーワード
+        author	        制作者
+        license	        ソフトウェア・ライセンス
+        dependencies	インストールの際に --save-prod オプションを指定したパッケージがリストされるフィールド。
+                        npm install でオプション  を指定しない場合、このフィールドに追加される。
+                        本番環境/Production で使用するパッケージをリストするフィールド。
+        devDependencies	インストールの際に --save-dev オプションを指定したパッケージがリストされるフィールド。
+                        開発環境/Development で使用する（開発時に依存する）パッケージをリストするフィールド。
+        optionalDependencies	インストールの際に --save-optional オプションを指定したパッケージがリスト
+                                されるフィールド。オプショナル用パッケージをリストするフィールド。
+                                このパッケージが見つからない場合やインストールに失敗した場合もインストールは続行される。
+        private	        プロジェクトを誤って公開しないようにするためのフィールドで true を指定すると公開されない。
+                        このプロパティが true になっていると、publish コマンドが使えないのでモジュールの公開ができない。
+        type	        モジュール方式を指定することができる。指定しない場合は Node.js のデフォルトの CommonJS を
+                        意味する commonjs 。拡張子を .js のままで ES modules を使用する場合は "type": "module"を指定。
+                        type を指定した package.json のあるディレクトリ及びその配下に影響。webpack などを利用している
+                        場合はどちらの方式でも動作するので通常は指定する必要なし。
+7.scripts フィールド
+    ・npm scripts
+        package.json の scripts フィールドにコマンドやスクリプト（npm scripts）を記述しておくとタスク処理ができる。
+    ・npm run-script
+        package.json の scripts フィールドにコマンドやスクリプトを記載すると npm run 〜 でそのコマンドやスクリプトを実行できる。
+            npm run 〜 または npm run-script 〜
+            --silent オプション ： スクリプトの実行結果だけを出力する
+    ・npm start
+        予約されたスクリプト名 (start stop test など) を使うと、
+        npm start、npm stop、npm test といった短縮形のコマンドで実行できる。
+8.package-lock.json
+    package-lock.json を使うと、同じ package.json からのパッケージのインストールを固定された特定のバージョンにすることができる。
+    プロジェクトの複製の際など npm install 実行時に package-lock.json が存在する場合、npm は package-lock.json の内容を元に
+    パッケージをインストールするので同じパッケージ環境を再現することができる。
+    ★プロジェクトをコピーするなら、package.json package-lock.json の両方をコピーすること！！
+9.パッケージを表示 ls
+    インストールされているパッケージを表示する。
+        -g	    グローバルインストールを表示（大量に表示される）
+        --long	詳細情報（extended information）を表示
+        --depth	表示する階層の深さを整数で指定。
+                例：一番上の階層のみを表示 --depth=0
+        --prod	dependencies に記載されているもの（Production）のみを表示
+        --dev	devDependencie に記載されているもの（Development）のみを表示
+10.インストール先/実行ファイルパスの表示
+    npm root    パッケージのインストール先であるルートディレクトリ（node_modules）のパスを表示
+    npm bin     実行ファイル（executables）の保存先のパスを表示
+    npm bin -g  グローバル実行ファイル（executables）の保存先のパスを表示
+    export PATH=$PATH:`npm bin -g`  パスを通す
+                                    ※ターミナルをログアウトするとクリアされる。
+11.パッケージの更新
+    ・更新の確認
+        npm outdated            パッケージに更新（アップデート）があるかを確認
+        npm outdated --long     Package Type と Homepage の項目を追加
+        npm outdated -g         グローバルを確認
 
+        ※表示内容
+            Package ： 更新がある（更新可能な）パッケージの名前
+            Current ： インストール済みのバージョン
+            Wanted  ： 既存のコードを壊すことなくアップデートできる最新バージョン
+            Latest  ： パッケージの最新バージョン
 
+    ・更新
+        npm update パッケージ名
+        npm packageパッケージ名 -g
 
+        ※パッケージ名を省略すると、package.json に記載されている全てのパッケージを更新する。
+        ※メジャーバージョンが変わる場合（例 1.x.x から 2.x.x）は最新のバージョンにならない。
+
+    ・npm-check-updates
+        package.json に記載されているパッケージのバージョンを一括で最新に書き変えてくれる
+        パッケージ。（Node.js のモジュール）
+        グローバルにインストールして使う。
+            npm install -g npm-check-updates
+
+        ncu オプション パッケージ
+        npm-check-updates オプション パッケージ
+
+    ・package.json の書き換え -u（--upgrade）
+        最新版がインストールできるように package.json が書き変えられる。
+            ncu -u
+        package.json 更新後に「npm update」を実施する。
