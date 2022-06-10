@@ -171,3 +171,22 @@ https://www.webdesignleaves.com/pr/jquery/npm_basic.html
         最新版がインストールできるように package.json が書き変えられる。
             ncu -u
         package.json 更新後に「npm update」を実施する。
+12.パッケージの削除 npm uninstall
+    $ npm uninstall パッケージ名
+    $ npm un パッケージ名
+    $ npm uninstall -g パッケージ名
+    $ npm un -g パッケージ名
+        ※package.json の書き込みオプション
+        --save -S           dependencies フィールドから削除される
+        --save-dev -D       devDependencies フィールドから削除される
+        --save-optional -O  optionalDe-pendencies フィールドから削除される
+        --no-save           削除されない
+13.npx
+    ・パッケージをコマンド実行する場合、.bin フォルダにあるパッケージコマンドを
+      実行する必要があるが、npx を使用すれば.bin フォルダを指定しなくても実行できる。
+        npx xxxxx
+        ./node_modules/.bin/xxxxx
+        $(npm bin)/xxxxx
+    ・パッケージをインストールしていない状態で、npx コマンドのパッケージ実行を行うと、
+      一時的にグローバルインストールされ、パッケージ実行される。
+      （install → 実行 → uninstall）

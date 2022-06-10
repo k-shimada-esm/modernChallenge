@@ -948,3 +948,199 @@ $ npm ls
 ├── sass@1.52.2
 ├── sax@1.2.4
 └── typescript@4.7.3
+
+------------------------------------------------------
+パッケージの削除 npm uninstall
+------------------------------------------------------
+※アンインストール前の package.json
+  "dependencies": {
+    "sass": "^1.52.2",
+    "sax": "^1.2.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1200 packageUninstall (npm)
+$ npm un --no-save typescript
+
+removed 1 package, and audited 19 packages in 1s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+※node_modules から typescript が削除された。
+※アンインストール後の package.json
+    "dependencies": {
+    "sass": "^1.52.2",
+    "sax": "^1.2.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+
+==========
+※アンインストール前の package.json
+    "dependencies": {
+    "sass": "^1.52.2",
+    "sax": "^1.2.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1200 packageUninstall (npm)
+$ npm un sass -D
+
+added 1 package, removed 17 packages, and audited 3 packages in 6s
+
+found 0 vulnerabilities
+
+※node_modules から sass が削除された。
+※アンインストール後の package.json
+  "dependencies": {
+    "sax": "^1.2.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+==========
+※アンインストール前の package.json
+  "dependencies": {
+    "sax": "^1.2.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1200 packageUninstall (npm)
+$ npm un sax -S
+
+removed 1 package, and audited 2 packages in 1s
+
+found 0 vulnerabilities
+
+※node_modules から sass が削除された。
+※アンインストール後の package.json
+
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+
+------------------------------------------------------
+npx
+------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ npm init -y
+Wrote to D:\modernChallenge\npm\npmStudy_2\1300_npxCmd\package.json:
+
+{
+  "name": "1300_npxcmd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ npm install cowsay
+
+added 41 packages, and audited 42 packages in 7s
+
+3 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ npx cowsay 'hello'
+ _______
+< hello >
+ -------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ ./node_modules/.bin/cowsay 'hello2'
+ ________
+< hello2 >
+ --------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ $(npm bin)/cowsay 'hello3'
+ ________
+< hello3 >
+ --------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ npm bin
+D:\modernChallenge\npm\npmStudy_2\1300_npxCmd\node_modules\.bin
+
+==========
+※package.json に登録
+  "scripts": {
+    "cow": "cowsay",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ npm run cow 'hellow4'
+
+> 1300_npxcmd@1.0.0 cow
+> cowsay "hellow4"
+
+ _________
+< hellow4 >
+ ---------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ npm un cowsay
+
+removed 41 packages, and audited 1 package in 1s
+
+found 0 vulnerabilities
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ npx cowsay 'hello5'
+Need to install the following packages:
+  cowsay
+Ok to proceed? (y) y
+ ________
+< hello5 >
+ --------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ $(npm bin)/cowsay
+bash: D:\modernChallenge\npm\npmStudy_2\1300_npxCmd\node_modules\.bin/cowsay: No such file or directory
