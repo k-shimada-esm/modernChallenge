@@ -24,7 +24,22 @@ found 0 vulnerabilities
 
 eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudyProgram (npm)
 $ node index.js
-Moment<2022-06-18T23:08:12+09:00>
-2022年06月18日 23時08分12秒
-Moment<2022-06-18T23:08:12+09:00>
-2022年06月18日 23時08分12秒
+現在時刻を出力する
+Moment<2022-06-19T22:02:21+09:00>
+標準形式で出力する
+Sun, Jun 19, 2022 10:02 PM
+日本ロケールで出力する
+2022年6月19日(日) 22:02
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudyProgram (npm)
+$ npm start
+
+> npmstudyprogram@1.0.0 start
+> node index.js
+
+現在時刻を出力する
+Moment<2022-06-19T22:05:50+09:00>
+標準形式で出力する
+Sun, Jun 19, 2022 10:05 PM
+日本ロケールで出力する
+2022年6月19日(日) 22:05

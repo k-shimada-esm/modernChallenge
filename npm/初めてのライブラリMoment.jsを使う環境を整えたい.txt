@@ -1,0 +1,86 @@
+https://qiita.com/irico/items/f7103d23f9c569cf9796
+
+1.moment.jsの軽量化作戦
+    moment.jsを普通にimportすると全ての言語ファイルも
+    含まれてしまいファイルサイズが大きくなる。
+    それを回避するため、webpack.config.jsでmoment.jsを
+    言語ファイルを除いてimportする。
+
+    ①webpack初級者から中級者にステップアップするために理解しておきたいプラグインまとめ
+        https://qiita.com/R-Yoshi/items/30282dee7b6d5ddd6622#ignoreplugin
+        従来:
+            ▼hoge.js
+            const moment = require("moment");
+            //これだとmoment全リソースをロードするのでファイル数が大きくなる
+            moment.locale("ja");
+        ContextReplacementPluginを用いる事で:
+            ▼webpack.config.js
+            plugins: [
+              //必要な言語を指定する。 en, ja, ...
+              new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en|ja|.../)
+            ],
+            ▼hoge.js
+            const moment = require("moment"); // webpackの中で指定されたlocaleだけ定義されているmomentで上書き
+            moment.locale("en");
+            moment.locale("ja");
+        モジュールを作成しないようにするためのプラグイン:
+            ▼webpack.config.js
+            plugins: [
+              // momentのlocale以下のmoduleを作成しない
+              new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+            ],
+
+    ②【JavaScript修行】初めてのwebpack4
+        https://qiita.com/irico/items/753a68414537f1afba6b
+
+        最新版で学ぶwebpack 5入門JavaScriptのモジュールバンドラ
+        https://ics.media/entry/12140/
+        ・webpackとは？
+            ウェブコンテンツを構成するファイルをまとめてしまうツール。
+            一番多い使い方は、複数のJavaScriptを1つにまとめること。
+            利点１：モジュールが使える
+                モジュールには標準仕様のECMAScript Modules（通称、ES Modules）、
+                Node.jsで旧来より用いられているCommonJS形式のモジュールなど、
+                さまざまなモジュールの形式がある。また、一般的なJSライブラリは
+                モジュール形式で提供されている。
+                webpackはどの形式にも対応しており、モジュールをバンドルする
+                （1つにまとめる）ことができる。
+            利点２：転送の最適化
+                複数のJSファイルを1つにまとめてしまうことで、ウェブコンテンツの
+                読み込み性能向上に役立つ。
+            利点３：JSだけでなく、CSSや画像もバンドルできる
+                スタイルシートや画像までもバンドルでき、転送の最適化につながる。
+            利点４：包括的な開発環境が整う
+                JSファイルの圧縮やソースマップに対応していたり、ローカルサーバーの
+                起動まで包括的な制作環境としての機能まである。
+                設定ファイルが煩雑化しがちだが、webpackであれば、はじめから最後まで
+                webpack一式でツールを揃えられる。
+        ・導入手順
+            npm init -y
+            npm install --save-dev webpack
+            npm install --save-dev webpack-cli
+        ・webpackでJSファイルをまとめる手順
+            現在は標準仕様のECMAScript Modules（略してES Modules、ESM）で書くのが一般的。
+            ▼index.js
+            // import 文を使って sub.js ファイルを読み込む。
+            import { hello } from "./sub";
+            // sub.jsに定義されたJavaScriptを実行する。
+            hello();
+            ▼sub.js
+            // export文を使ってhello関数を定義する。
+            export function hello() {
+              alert("helloメソッドが実行された。");
+            }
+            ▼webpackによるビルド（コマンドライン）
+            npx webpack
+              ⇒index.js内で必要なsub.jsが統合され、distフォルダーのなかにmain.jsとして出力される。
+        ・webpack.config.jsをカスタマイズする
+            webpackでは、エントリーポイントを指定しなければ自動的に「src/index.js」がエントリーポイントに、
+            出力先を指定しなければ自動的に「dist/main.js」に、出力される。
+            output.pathオプションを省略すると、出力ファイルは「dist」フォルダーにファイルが作成される。
+        ・webpackの設定ファイル
+            modeにdevelopmentを記述することでソースマップを有効にする。
+            逆に、modeの部分でproductionを指定することで、JavaSciptのコードを圧縮できる。
+            開発時にはdevelopmentを指定し、ウェブサイト公開時にはproductionに設定するのがよい。
+            productionを指定した場合は、dist/main.jsファイルの中身はムダなコメントが省略され、
+            ファイル容量が最小化されていることが確認できる。

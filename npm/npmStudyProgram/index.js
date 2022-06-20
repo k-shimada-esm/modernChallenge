@@ -1,9 +1,11 @@
 const moment = require('moment');
-console.log(moment());
-console.log(moment().format('YYYY年MM月DD日 HH時mm分ss秒'));
 
-// 日本のロケールを有効にする
-moment.locale('ja');
-
+console.log('現在時刻を出力する');
 console.log(moment());
-console.log(moment().format('YYYY年MM月DD日 HH時mm分ss秒'));
+
+console.log('標準形式で出力する');
+console.log(moment().format('llll'));
+
+console.log('日本ロケールで出力する');
+moment.locale('ja');    // 日本のロケールを有効にする
+console.log(moment().format('llll'));
