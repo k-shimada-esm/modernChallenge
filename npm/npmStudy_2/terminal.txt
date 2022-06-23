@@ -1,0 +1,1146 @@
+------------------------------------------------------
+npm とは
+------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm (npm)
+$ npm -v
+8.10.0
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm (npm)
+$ npm version
+{
+  npm: '8.10.0',
+  node: '16.15.0',
+  v8: '9.4.146.24-node.20',
+  uv: '1.43.0',
+  zlib: '1.2.11',
+  brotli: '1.0.9',
+  ares: '1.18.1',
+  modules: '93',
+  nghttp2: '1.47.0',
+  napi: '8',
+  llhttp: '6.0.4',
+  openssl: '1.1.1n+quic',
+  cldr: '40.0',
+  icu: '70.1',
+  tz: '2021a3',
+  unicode: '14.0',
+  ngtcp2: '0.1.0-DEV',
+  nghttp3: '0.1.0-DEV'
+}
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm (npm)
+$ npm
+npm <command>
+
+Usage:
+
+npm install        install all the dependencies in your projectnpm install <foo>  add the <foo> dependency to your project
+npm test           run this project's tests
+npm run <foo>      run the script named <foo>
+npm <command> -h   quick help on <command>
+npm -l             display usage info for all commands
+npm help <term>    search for help on <term> (in a browser)
+npm help npm       more involved overview (in a browser)
+
+All commands:
+
+    access, adduser, audit, bin, bugs, cache, ci,
+    completion, config, dedupe, deprecate, diff,
+    dist-tag, docs, doctor, edit, exec, explain,
+    explore, find-dupes, fund, get, help, hook,
+    init, install, install-ci-test, install-test,
+    link, ll, login, logout, ls, org, outdated,
+    owner, pack, ping, pkg, prefix, profile, prune,
+    publish, rebuild, repo, restart, root,
+    run-script, search, set, set-script,
+    shrinkwrap, star, stars, start, stop, team,
+    test, token, uninstall, unpublish, unstar,
+    update, version, view, whoami
+
+Specify configs in the ini-formatted file:
+    C:\Users\eiwafd084\.npmrc
+or on the command line via: npm <command> --key=value
+
+More configuration info: npm help config
+Configuration fields: npm help 7 config
+
+npm@8.10.0 C:\Users\eiwafd084\AppData\Roaming\npm\node_modules\npm
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm (npm)
+$ npm help init
+※「file:///C:/Users/eiwafd084/AppData/Roaming/npm/node_modules/npm/docs/output/commands/npm-init.html」が開いた。
+
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm (npm)
+$ npm init -h
+Create a package.json file
+
+Usage:
+npm init [--force|-f|--yes|-y|--scope]
+npm init <@scope> (same as `npx <@scope>/create`)
+npm init [<@scope>/]<name> (same as `npx [<@scope>/]create-<name>`)
+
+Options:
+[-y|--yes] [-f|--force]
+[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+[-ws|--workspaces] [--include-workspace-root]
+
+aliases: create, innit
+
+Run "npm help init" for more info
+
+------------------------------------------------------
+パッケージのインストール
+------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm (npm)
+$ npm root -g
+C:\Users\eiwafd084\AppData\Roaming\npm\node_modules
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm (npm)
+$ npm list -g --depth=0
+C:\Users\eiwafd084\AppData\Roaming\npm
+├── @google/clasp@2.4.1
+├── @vue/cli@4.5.13
+└── npm@8.10.0
+
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm (npm)
+$ npm root
+D:\modernChallenge\npm\node_modules
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm (npm)
+$ npm list
+D:\modernChallenge\npm
+└── (empty)
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy (npm)
+$ npm root
+D:\modernChallenge\npm\npmStudy\node_modules
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy (npm)
+$ npm list
+npmstudy@1.0.0 D:\modernChallenge\npm\npmStudy
+├── express@4.18.1
+└── react@18.1.0
+
+------------------------------------------------------
+ローカルインストール
+------------------------------------------------------
+※実行前に「npmStudy」の「package.json」を「npmStudy_2/projectCopy」にコピーする。
+　プロジェクトのコピーがされるはず。
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy (npm)
+$ cd ../npmStudy_2/
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2 (npm)
+$ cd projectCopy/
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/projectCopy (npm)
+$ ls
+package.json
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/projectCopy (npm)
+$ npm install
+
+added 60 packages, and audited 61 packages in 10s
+
+7 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/projectCopy (npm)
+$ ls
+node_modules/  package.json  package-lock.json
+
+
+------------------------------------------------------
+初期化 npm init
+------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/projectCopy (npm)
+$ npm help package.json
+※「file:///C:/Users/eiwafd084/AppData/Roaming/npm/node_modules/npm/docs/output/configuring-npm/package-json.html」が開いた。
+
+==========
+インストール npm install
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/install (npm)
+$ npm install jquery
+
+added 1 package, and audited 2 packages in 8s
+
+found 0 vulnerabilities
+==========
+バージョンを指定してインストール
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/install (npm)
+$ npm install sass@1.22.12
+
+added 15 packages, and audited 17 packages in 4s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/install (npm)
+$ npm install sax@">=0.1.0 <0.2.0"
+
+added 1 package, and audited 18 packages in 2s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/install (npm)
+$ ls
+node_modules/  package.json  package-lock.json
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/install (npm)
+$ ls node_modules/
+anymatch/           is-binary-path/  picomatch/
+binary-extensions/  is-extglob/      readdirp/
+braces/             is-glob/         sass/
+chokidar/           is-number/       sax/
+fill-range/         jquery/          to-regex-range/
+glob-parent/        normalize-path/
+==========
+※package.json
+{
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "sass": "^1.22.12",
+    "sax": "^0.1.5"
+  }
+}
+
+==========
+プロジェクトの複製・コピー
+（package.json コピー。--production オプション無）
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2 (npm)
+$ mkdir installProjectCopy
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2 (npm)
+$ cd installProjectCopy/
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/installProjectCopy (npm)
+$ cp ../install/package.json ./
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/installProjectCopy (npm)
+$ npm install
+
+added 19 packages, and audited 20 packages in 8s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/installProjectCopy (npm)
+$ npm ls sass
+installProjectCopy@ D:\modernChallenge\npm\npmStudy_2\installProjectCopy
+└── sass@1.52.1
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/install (npm)
+$ npm ls sass
+install@ D:\modernChallenge\npm\npmStudy_2\install
+└── sass@1.22.12
+==========
+※package.json
+{
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "sass": "^1.22.12",
+    "sax": "^0.1.5"
+  }
+}
+==========
+（package.json, package-lock コピー。--production オプション無）
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2 (npm)
+$ mkdir installProjectCopy2
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2 (npm)
+$ cd installProjectCopy2/
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/installProjectCopy2 (npm)
+$ cp ../install/package.json ./
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/installProjectCopy2 (npm)
+$ cp ../install/package-lock.json ./
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/installProjectCopy2 (npm)
+$ npm install
+
+added 17 packages, and audited 18 packages in 2s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/installProjectCopy2 (npm)
+$ npm ls sass
+installProjectCopy2@ D:\modernChallenge\npm\npmStudy_2\installProjectCopy2
+└── sass@1.22.12
+==========
+（package.json コピー。--production オプション有）
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2 (npm)
+$ mkdir installProjectCopy3
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2 (npm)
+$ cd installProjectCopy3
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/installProjectCopy3 (npm)
+$ cp ../install/package.json ./
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/installProjectCopy3 (npm)
+$ npm install
+
+added 20 packages, and audited 21 packages in 8s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/installProjectCopy3 (npm)
+$ npm list --depth=0
+installProjectCopy3@ D:\modernChallenge\npm\npmStudy_2\installProjectCopy3
+├── jquery@3.6.0
+├── sass@1.52.1
+├── sax@0.1.5
+└── typescript@4.6.4
+
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/installProjectCopy3 (npm)
+$ ls node_modules/
+anymatch/           is-binary-path/  readdirp/
+binary-extensions/  is-extglob/      sass/
+braces/             is-glob/         sax/
+chokidar/           is-number/       source-map-js/
+fill-range/         jquery/          to-regex-range/
+glob-parent/        normalize-path/  typescript/
+immutable/          picomatch/
+
+※package.json
+{
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "sass": "^1.22.12",
+    "sax": "^0.1.5"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
+
+==========
+（package.json, package-lock コピー。--production オプション有）
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/installProjectCopy3 (npm)
+$ cd ../
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2 (npm)
+$ mkdir installProjectCopy4
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2 (npm)
+$ cd installProjectCopy4
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/installProjectCopy4 (npm)
+$ cp ../install/package.json ./
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/installProjectCopy4 (npm)
+$ npm install --production
+npm WARN config production Use `--omit=dev` instead.
+
+added 19 packages, and audited 20 packages in 3s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/installProjectCopy4 (npm)
+$ npm list --depth=0
+installProjectCopy4@ D:\modernChallenge\npm\npmStudy_2\installProjectCopy4
+├── jquery@3.6.0
+├── sass@1.52.1
+├── sax@0.1.5
+└── UNMET DEPENDENCY typescript@^4.6.4
+
+npm ERR! code ELSPROBLEMS
+npm ERR! missing: typescript@^4.6.4, required by installProjectCopy4@
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\eiwafd084\AppData\Local\npm-cache\_logs\2022-05-21T04_08_30_253Z-debug-0.log
+
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/installProjectCopy4 (npm)
+$ ls node_modules/
+anymatch/           is-binary-path/  readdirp/
+binary-extensions/  is-extglob/      sass/
+braces/             is-glob/         sax/
+chokidar/           is-number/       source-map-js/
+fill-range/         jquery/          to-regex-range/
+glob-parent/        normalize-path/
+immutable/          picomatch/
+
+※package.json
+{
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "sass": "^1.22.12",
+    "sax": "^0.1.5"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
+
+------------------------------------------------------
+パッケージの検索 search
+------------------------------------------------------
+==========
+パッケージの検索 search
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/search (npm)
+$ npm search sass
+NAME                      | DESCRIPTION          | AUTHOR
+sass                      | A pure JavaScript…   | =nex3 =xzyfenode-sass                 | Wrapper around…      | =saperski…
+sass-loader               | Sass loader for…     | =evilebottnabootstrap                 | The most popular…    | =bootstrap-astylelint                 | A mighty, modern…    | =ntwb…
+node-sass-middleware      | Connect middleware…  | =andrewnez…
+gulp-sass                 | Gulp plugin for sass | =dlmanning…
+resolve-url-loader        | Webpack loader that… | =bholloway
+bootstrap-sass            | bootstrap-sass is a… | =bootstrap-asass-true                 | Unit testing for…    | =jerivas…
+foundation-sites          | The most advanced…   | =gakimball…
+postcss-scss              | SCSS parser for…     | =ai
+sass-lookup               | Get the file…        | =pahen…
+node-sass-chokidar        | A thin wrapper…      | =wayman
+@styled-jsx/plugin-sass   | Plugin to add Sass…  | =martondev…
+@financial-times/sass-mq  | mq() is a Sass…      | =nikita.lohipostcss-nested            | PostCSS plugin to…   | =ai
+carbon-components         | The Carbon Design…   | =joshblack…
+material-colors           | Colors of Google's…  | =shuhei
+breakpoint-sass           | Really Simple Media… | =snugug
+==========
+パッケージの詳細情報 view
+==========
+$ npm view jquery
+
+jquery@3.6.0 | MIT | deps: none | versions: 53
+JavaScript library for DOM operations
+https://jquery.com
+
+keywords: jquery, javascript, browser, library
+
+dist
+.tarball: https://registry.npmjs.org/jquery/-/jquery-3.6.0.tgz
+.shasum: c72a09f15c1bdce142f49dbf1170bdf8adac2470
+.integrity: sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
+.unpackedSize: 1.3 MB
+
+maintainers:
+- dmethvin <dave.methvin@gmail.com>
+- timmywil <4timmywil@gmail.com>
+- mgol <m.goleb@gmail.com>
+- openjsfoundation <npm@openjsf.org>
+
+dist-tags:
+beta: 3.6.0    latest: 3.6.0
+
+published a year ago by timmywil <4timmywil@gmail.com>
+==========
+パッケージのバージョンを表示
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/search (npm)
+$ npm view jquery version
+3.6.0
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/search (npm)
+$ npm view jquery versions
+[
+  '1.5.1',        '1.6.2',      '1.6.3',        '1.7.2',
+  '1.7.3',        '1.8.2',      '1.8.3',        '1.9.1',
+  '1.11.0-beta3', '1.11.0-rc1', '1.11.0',       '1.11.1-beta1',  '1.11.1-rc1',   '1.11.1-rc2', '1.11.1',       '1.11.2',
+  '1.11.3',       '1.12.0',     '1.12.1',       '1.12.2',
+  '1.12.3',       '1.12.4',     '2.1.0-beta2',  '2.1.0-beta3',
+  '2.1.0-rc1',    '2.1.0',      '2.1.1-beta1',  '2.1.1-rc1',
+  '2.1.1-rc2',    '2.1.1',      '2.1.2',        '2.1.3',
+  '2.1.4',        '2.2.0',      '2.2.1',        '2.2.2',
+  '2.2.3',        '2.2.4',      '3.0.0-alpha1', '3.0.0-beta1',
+  '3.0.0-rc1',    '3.0.0',      '3.1.0',        '3.1.1',
+  '3.2.0',        '3.2.1',      '3.3.0',        '3.3.1',
+  '3.4.0',        '3.4.1',      '3.5.0',        '3.5.1',
+  '3.6.0'
+]
+
+------------------------------------------------------
+scripts フィールド（npm scripts）
+------------------------------------------------------
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+    ↓
+  "scripts": {
+    "start": "node index.js"
+  },
+
+  eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/scriptsField (npm)
+$ npm start
+
+> scriptsfield@1.0.0 start
+> node index.js
+
+Hello npm!
+==========
+ "scripts": {
+    "start": "node index.js",
+    "foo": "echo 'Hello from Foo!'"
+  },
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/scriptsField (npm)
+$ npm run foo
+
+> scriptsfield@1.0.0 foo
+> echo 'Hello from Foo!'
+
+'Hello from Foo!'
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/scriptsField (npm)
+$ npm run-script foo
+
+> scriptsfield@1.0.0 foo
+> echo 'Hello from Foo!'
+
+'Hello from Foo!'
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/scriptsField (npm)
+$ npm run foo --silent
+'Hello from Foo!'
+
+==========
+  "scripts": {
+    "start": "node index.js",
+    "foo": "echo 'Hello from Foo!'",
+    "sass-ver": "npm sass --version"
+  },
+
+  eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/scriptsField (npm)
+$ npm run sass-ver
+
+> scriptsfield@1.0.0 sass-ver
+> npm sass --version
+
+8.10.0
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/scriptsField (npm)
+$ npm run sass-ver --silent
+8.10.0
+
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/scriptsField (npm)
+$ npm start
+
+> scriptsfield@1.0.0 start
+> node index.js
+
+Hello npm!
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/scriptsField (npm)
+$ npm run start
+
+> scriptsfield@1.0.0 start
+> node index.js
+
+Hello npm!
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/scriptsField (npm)
+$ npm run-script start
+
+> scriptsfield@1.0.0 start
+> node index.js
+
+Hello npm!
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/scriptsField (npm)
+$ npm start --silent
+Hello npm!
+
+------------------------------------------------------
+package-lock.json
+------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0800 package-lock (npm)
+$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to
+guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (0800-package-lock)
+version: (1.0.0)
+description:
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author:
+license: (ISC)
+About to write to D:\modernChallenge\npm\npmStudy_2\0800 package-lock\package.json:
+
+{
+  "name": "0800-package-lock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes)
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0800 package-lock (npm)
+$ npm install sass@1.22.12
+
+added 15 packages, and audited 16 packages in 7s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0800 package-lock (npm)
+$ npm list --depth=0
+0800-package-lock@1.0.0 D:\modernChallenge\npm\npmStudy_2\0800 package-lock
+└── sass@1.22.12
+
+==========
+※package.json のみコピー
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0800 package-lock2 (npm)
+$ npm install
+
+added 17 packages, and audited 18 packages in 3s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0800 package-lock2 (npm)
+$ npm list --depth=0
+0800-package-lock@1.0.0 D:\modernChallenge\npm\npmStudy_2\0801 package-lock2
+└── sass@1.52.2
+
+==============
+※package.json と package-lock.json コピー
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0800 package-lock3 (npm)
+$ npm install
+
+added 15 packages, and audited 16 packages in 1s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0800 package-lock3 (npm)
+$ npm list --depth=0
+0800-package-lock@1.0.0 D:\modernChallenge\npm\npmStudy_2\0800 package-lock3
+└── sass@1.22.12
+
+------------------------------------------------------
+パッケージを表示 ls
+------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0300 projectCopy (npm)
+$ npm ls
+npmstudy@1.0.0 D:\modernChallenge\npm\npmStudy_2\0300 projectCopy
+├── express@4.18.1
+└── react@18.1.0
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0300 projectCopy (npm)
+$ npm list
+npmstudy@1.0.0 D:\modernChallenge\npm\npmStudy_2\0300 projectCopy
+├── express@4.18.1
+└── react@18.1.0
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0300 projectCopy (npm)
+$ npm la
+npmstudy@1.0.0
+│ D:\modernChallenge\npm\npmStudy_2\0300 projectCopy
+│
+├── express@4.18.1
+│
+└── react@18.1.0
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0300 projectCopy (npm)
+$ npm ll
+npmstudy@1.0.0
+│ D:\modernChallenge\npm\npmStudy_2\0300 projectCopy
+│
+├── express@4.18.1
+│
+└── react@18.1.0
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0300 projectCopy (npm)
+$ npm ls --long
+npmstudy@1.0.0
+│ D:\modernChallenge\npm\npmStudy_2\0300 projectCopy
+│
+├── express@4.18.1
+│
+└── react@18.1.0
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0300 projectCopy (npm)
+$ npm list --long
+npmstudy@1.0.0
+│ D:\modernChallenge\npm\npmStudy_2\0300 projectCopy
+│
+├── express@4.18.1
+│
+└── react@18.1.0
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0300 projectCopy (npm)                   pmStudy_2/0300 projectCopy (npm)
+$ npm ls --depth=0
+npmstudy@1.0.0 D:\modernChallenge\npm\npmStudy_2\0300 projectCopy
+├── express@4.18.1
+└── react@18.1.0
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0300 projectCopy (npm)
+$ npm ls --dev
+npm WARN config dev Please use --include=dev instead.
+npmstudy@1.0.0 D:\modernChallenge\npm\npmStudy_2\0300 projectCopy
+├── express@4.18.1
+└── react@18.1.0
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0300 projectCopy (npm)
+$ npm ls --prod --depth=0
+npm WARN config production Use `--omit=dev` instead.
+npmstudy@1.0.0 D:\modernChallenge\npm\npmStudy_2\0300 projectCopy
+├── express@4.18.1
+└── react@18.1.0
+
+------------------------------------------------------
+インストール先/実行ファイルパスの表示
+------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0400 install (npm)
+$ npm root
+D:\modernChallenge\npm\npmStudy_2\0400 install\node_modules
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0400 install (npm)
+$ npm bin
+D:\modernChallenge\npm\npmStudy_2\0400 install\node_modules\.bin
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0400 install (npm)
+$ npm bin -g
+C:\Users\eiwafd084\AppData\Roaming\npm
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/0400 install (npm)
+$ export PSTH=$PATH:'npm bin -g'
+
+------------------------------------------------------
+パッケージの更新
+------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1100 packageUpdate (npm)
+$ npm outdated
+Package  Current  Wanted  Latest  Location           Depended by
+sass     1.22.12  1.52.2  1.52.2  node_modules/sass  1100 packageUpdate
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1100 packageUpdate (npm)
+$ npm outdated --long
+Package  Current  Wanted  Latest  Location           Depended by         Package Type  Homepage
+sass     1.22.12  1.52.2  1.52.2  node_modules/sass  1100 packageUpdate  dependencies  https://github.com/sass/dart-sass
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1100 packageUpdate (npm)
+$ npm outdated -g
+Package   Current  Wanted  Latest  Location               Depended by
+@vue/cli   4.5.13   5.0.4   5.0.4  node_modules/@vue/cli  global
+npm        8.10.0  8.12.1  8.12.1  node_modules/npm       global
+
+==========
+npm-check-updates
+==========
+※package.json
+  "dependencies": {
+    "sass": "^1.22.12",
+    "sax": "^0.5.6"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.3"
+  }
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1100 packageUpdate (npm)
+$ npm outdated
+Package     Current  Wanted  Latest  Location                 Depended by
+sass        1.22.12  1.52.2  1.52.2  node_modules/sass        1100 packageUpdate
+sax           0.5.6   0.5.8   1.2.4  node_modules/sax         1100 packageUpdate
+typescript    3.9.3  3.9.10   4.7.3  node_modules/typescript  1100 packageUpdate
+
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1100 packageUpdate (npm)
+$ npm install -g npm-check-updates
+
+added 273 packages, and audited 274 packages in 1m
+
+29 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1100 packageUpdate (npm)
+$ ncu
+Checking D:\modernChallenge\npm\npmStudy_2\1100 packageUpdate\package.json
+[====================] 3/3 100%
+
+ sass        ^1.22.12  →  ^1.52.2
+ sax           ^0.5.6  →   ^1.2.4
+ typescript    ^3.9.3  →   ^4.7.3
+
+Run ncu -u to upgrade package.json
+
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1100 packageUpdate (npm)
+$ ncu
+Checking D:\modernChallenge\npm\npmStudy_2\1100 packageUpdate\package.json
+[====================] 3/3 100%
+
+ sass        ^1.22.12  →  ^1.52.2
+ sax           ^0.5.6  →   ^1.2.4
+ typescript    ^3.9.3  →   ^4.7.3
+
+Run ncu -u to upgrade package.json
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1100 packageUpdate (npm)
+$ ncu sass
+Checking D:\modernChallenge\npm\npmStudy_2\1100 packageUpdate\package.json
+[====================] 1/1 100%
+
+ sass  ^1.22.12  →  ^1.52.2
+
+Run ncu -u to upgrade package.json
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1100 packageUpdate (npm)
+$ ncu sass sax
+Checking D:\modernChallenge\npm\npmStudy_2\1100 packageUpdate\package.json
+[====================] 2/2 100%
+
+ sass  ^1.22.12  →  ^1.52.2
+ sax     ^0.5.6  →   ^1.2.4
+
+Run ncu -u to upgrade package.json
+
+==========
+※package.json
+  "dependencies": {
+    "sass": "^1.22.12",
+    "sax": "^0.5.6"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.3"
+  }
+※package-lock.json
+  "packages": {
+    "": {
+      "name": "1100-packageupdate",
+      "version": "1.0.0",
+      "license": "ISC",
+      "dependencies": {
+        "sass": "^1.22.12",
+        "sax": "^0.5.6"
+      },
+      "devDependencies": {
+        "typescript": "^3.9.3"
+      }
+    },
+
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1100 packageUpdate (npm)
+$ ncu -u
+Upgrading D:\modernChallenge\npm\npmStudy_2\1100 packageUpdate\package.json
+[====================] 3/3 100%
+
+ sass        ^1.22.12  →  ^1.52.2
+ sax           ^0.5.6  →   ^1.2.4
+ typescript    ^3.9.3  →   ^4.7.3
+
+Run npm install to install new versions.
+
+==========
+※ncu -u コマンド実行後のpackage.json
+  "dependencies": {
+    "sass": "^1.52.2",
+    "sax": "^1.2.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+※ncu -u コマンド実行後のpackage-lock.json
+  "packages": {
+    "": {
+      "name": "1100-packageupdate",
+      "version": "1.0.0",
+      "license": "ISC",
+      "dependencies": {
+        "sass": "^1.22.12",
+        "sax": "^0.5.6"
+      },
+      "devDependencies": {
+        "typescript": "^3.9.3"
+      }
+    },
+
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1100 packageUpdate (npm)
+$ npm update
+
+added 2 packages, changed 3 packages, and audited 20 packages in 10s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+==========
+※npm update コマンド実行後のpackage.json
+  "dependencies": {
+    "sass": "^1.52.2",
+    "sax": "^1.2.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+※npm update コマンド実行後のpackage-lock.json
+  "packages": {
+    "": {
+      "name": "1100-packageupdate",
+      "version": "1.0.0",
+      "license": "ISC",
+      "dependencies": {
+        "sass": "^1.52.2",
+        "sax": "^1.2.4"
+      },
+      "devDependencies": {
+        "typescript": "^4.7.3"
+      }
+    },
+
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1100 packageUpdate (npm)
+$ npm outdated
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1100 packageUpdate (npm)
+$ npm ls
+1100-packageupdate@1.0.0 D:\modernChallenge\npm\npmStudy_2\1100 packageUpdate
+├── sass@1.52.2
+├── sax@1.2.4
+└── typescript@4.7.3
+
+------------------------------------------------------
+パッケージの削除 npm uninstall
+------------------------------------------------------
+※アンインストール前の package.json
+  "dependencies": {
+    "sass": "^1.52.2",
+    "sax": "^1.2.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1200 packageUninstall (npm)
+$ npm un --no-save typescript
+
+removed 1 package, and audited 19 packages in 1s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+※node_modules から typescript が削除された。
+※アンインストール後の package.json
+    "dependencies": {
+    "sass": "^1.52.2",
+    "sax": "^1.2.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+
+==========
+※アンインストール前の package.json
+    "dependencies": {
+    "sass": "^1.52.2",
+    "sax": "^1.2.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1200 packageUninstall (npm)
+$ npm un sass -D
+
+added 1 package, removed 17 packages, and audited 3 packages in 6s
+
+found 0 vulnerabilities
+
+※node_modules から sass が削除された。
+※アンインストール後の package.json
+  "dependencies": {
+    "sax": "^1.2.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+==========
+※アンインストール前の package.json
+  "dependencies": {
+    "sax": "^1.2.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1200 packageUninstall (npm)
+$ npm un sax -S
+
+removed 1 package, and audited 2 packages in 1s
+
+found 0 vulnerabilities
+
+※node_modules から sass が削除された。
+※アンインストール後の package.json
+
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+
+------------------------------------------------------
+npx
+------------------------------------------------------
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ npm init -y
+Wrote to D:\modernChallenge\npm\npmStudy_2\1300_npxCmd\package.json:
+
+{
+  "name": "1300_npxcmd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ npm install cowsay
+
+added 41 packages, and audited 42 packages in 7s
+
+3 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ npx cowsay 'hello'
+ _______
+< hello >
+ -------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ ./node_modules/.bin/cowsay 'hello2'
+ ________
+< hello2 >
+ --------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ $(npm bin)/cowsay 'hello3'
+ ________
+< hello3 >
+ --------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ npm bin
+D:\modernChallenge\npm\npmStudy_2\1300_npxCmd\node_modules\.bin
+
+==========
+※package.json に登録
+  "scripts": {
+    "cow": "cowsay",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ npm run cow 'hellow4'
+
+> 1300_npxcmd@1.0.0 cow
+> cowsay "hellow4"
+
+ _________
+< hellow4 >
+ ---------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+==========
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ npm un cowsay
+
+removed 41 packages, and audited 1 package in 1s
+
+found 0 vulnerabilities
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ npx cowsay 'hello5'
+Need to install the following packages:
+  cowsay
+Ok to proceed? (y) y
+ ________
+< hello5 >
+ --------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudy_2/1300_npxCmd (npm)
+$ $(npm bin)/cowsay
+bash: D:\modernChallenge\npm\npmStudy_2\1300_npxCmd\node_modules\.bin/cowsay: No such file or directory

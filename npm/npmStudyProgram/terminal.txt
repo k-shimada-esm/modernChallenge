@@ -1,0 +1,45 @@
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudyProgram (npm)
+$ npm init -y
+Wrote to D:\modernChallenge\npm\npmStudyProgram\package.json:
+
+{
+  "name": "npmstudy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudyProgram (npm)
+$ npm install --save moment
+
+added 1 package, and audited 2 packages in 10s
+
+found 0 vulnerabilities
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudyProgram (npm)
+$ node index.js
+現在時刻を出力する
+Moment<2022-06-19T22:02:21+09:00>
+標準形式で出力する
+Sun, Jun 19, 2022 10:02 PM
+日本ロケールで出力する
+2022年6月19日(日) 22:02
+
+eiwafd084@tsuji-PC MINGW64 /d/modernChallenge/npm/npmStudyProgram (npm)
+$ npm start
+
+> npmstudyprogram@1.0.0 start
+> node index.js
+
+現在時刻を出力する
+Moment<2022-06-19T22:05:50+09:00>
+標準形式で出力する
+Sun, Jun 19, 2022 10:05 PM
+日本ロケールで出力する
+2022年6月19日(日) 22:05

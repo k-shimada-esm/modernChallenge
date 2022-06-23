@@ -1,0 +1,13 @@
+{
+  "name": "scriptsfield",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "foo": "echo 'Hello from Foo!'",
+    "sass-ver": "npm sass --version"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,192 @@
+https://www.webdesignleaves.com/pr/jquery/npm_basic.html
+
+1.npm とは [Node Package Manager]
+    ・Node.js のパッケージ（Package）を管理するツール。
+    ・パッケージとは Node.js で利用できる JavaScript のライブラリやフレームワークなどのこと。
+    ・各種ライブラリなどの依存関係を管理・解決してくれる。
+    ・パッケージの検索や更新、バージョン管理、アンインストールなどもできる。
+
+    $ npm version       ： npm, node のバージョン確認
+    $ npm help (コマンド名 or キーワード) ： オンラインヘルプが起動される。
+    $ npm コマンド -h   ： クイック（簡易）ヘルプ
+
+2.パッケージのインストール
+    $ npm install -g パッケージ名   ： グローバルインストール
+                                      全てのプロジェクトで同じパッケージを使う。
+    $ npm list -g --depth=0        ： グローバルインストールの確認。--depth=0 は一番上の階層のみ。
+    $ npm install パッケージ名  ： ローカルインストール（プロジェクトのディレクトリで実行）
+                                  対象のプロジェクトでのみインストールしたパッケージを使用する。
+    $ npm list  ： カレントディレクトリのインストール確認。
+
+    ・package.json にはそのプロジェクトでインストールしたパッケージの情報が追加され、
+    　インストールした際のオプション（本番環境用、開発環境用、プロジェクト固有など）も追加される。
+    ・package-lock.json が自動的に生成され、このファイルを使ってパッケージのバージョンを固定する。
+
+3.ローカルインストール
+    ・パッケージをインストールすると node_modules ディレクトリが自動的に作成される。パッケージ関連のファイルが格納される。
+    　「package.json」が存在しない時は作成すること。
+    $ npm init                          ： package.json の生成
+    $ npm install パッケージ名 return    ： 指定パッケージをインストール
+    $ npm install                       ： プロジェクトのコピー。
+                                           パッケージ名を指定せずに実行すると、package.json に記述されたパッケージを一括インストール。
+
+4.初期化 npm init
+    【package.json のフィールド】
+        version     ：バージョン
+        description ：説明
+        main        ：公開するパッケージのエントリポイント（Default：index.js）
+        scripts 	：npm run 〜 や npm start などで実行できるスクリプトを定義するフィールド。
+                    　Default：（test コマンド。ドキュメントルートに server.js があれば "start": "node server.js"）
+        keywords	：npm パッケージハブでの検索に使われるキーワード
+        author	    ：制作者
+        license	    ：ソフトウェア・ライセンス
+        	        　（Default：ISC（フリーソフトウェアライセンス））
+
+    ①インストール、バージョンを指定してインストール
+        $ npm install   ：パッケージ名 パッケージ名 パッケージ名...
+        $ npm install   ：パッケージ名@バージョン
+        $ npm install   ：パッケージ名@">=バージョン <バージョン"
+    ②install コマンドオプション
+        --save-prod ※-P ：省略時。
+                           package.json の dependencies に追加される。
+                           ※Production（本番環境）の意味。
+        --save-dev  ※-D ：テストツールなど開発環境で使う（開発時に依存する）パッケージに指定。
+                           package.json の devDependencies に追加される。
+                           ※Development（開発環境）の意味。
+                           ※npm install で --production オプションを指定するとこのパッケージはインストールされない。
+        --save-optional ※-O ：オプショナルなパッケージに指定する。
+                           package.json の optionalDependencies に追加される。
+                           npm install でインストールできないときはスキップされる。
+        --no-save       ：package.json に書き込まない（パッケージ管理をしない）場合に指定する。
+                          package.json に追加されない。
+                          npm install でインストールされない。
+        上記オプションに同時指定可能。
+        --save-exact ※-E    ：dependencies / devDependencies のバージョン指定に（同じメジャーバージョンの最新版/semver range ではなく）
+                               正確なバージョンのみを依存の対象とする（明示的なバージョン固定）。
+
+
+    ③プロジェクトの複製・コピー
+        ・既存の package.json を新プロジェクトのルートディレクトリに配置して、
+          パッケージ名を指定せずにインストールコマンドを実行すれば
+          同じパッケージで構成されるプロジェクトを複製することができる。
+          ※その時点での同じメジャーバージョンの最新版がインストールされる。
+            package.json は変更されない。
+          ※既存の package-lock.json もコピーすれば、同じバージョンがインストールされる。
+        ・npm install で --production オプションを指定して実行すると
+          package.json の devDependencies に記載されているパッケージはインストールされない。
+5.パッケージの検索 search
+    ・パッケージの検索 search
+        npm search パッケージ名（キーワード）
+    ・パッケージの詳細情報 view
+        npm view パッケージ
+    ・パッケージの最新バージョンを表示
+        npm view パッケージ version
+    ・インストール可能なパッケージのバージョンを表示
+        npm view パッケージ versions
+6.package.json
+    ・ package.json のフィールド
+        name	        名前（必須）
+        version	        バージョン（必須）
+        description	    作成したパッケージの説明
+        main	        パッケージのエントリーポイントをパッケージルートからの相対パスで指定。
+                        ユーザーがそのパッケージをインストールし、require() を実行した時に
+                        main で指定したモジュールの exports オブジェクトが返される。
+                        そのパッケージを NPM で公開しない場合は指定しなくても問題ない。
+        scripts 	    npm run 〜 や npm start などで実行できるスクリプトを定義するフィールド。
+        keywords	    npm パッケージハブでの検索に使われるキーワード
+        author	        制作者
+        license	        ソフトウェア・ライセンス
+        dependencies	インストールの際に --save-prod オプションを指定したパッケージがリストされるフィールド。
+                        npm install でオプション  を指定しない場合、このフィールドに追加される。
+                        本番環境/Production で使用するパッケージをリストするフィールド。
+        devDependencies	インストールの際に --save-dev オプションを指定したパッケージがリストされるフィールド。
+                        開発環境/Development で使用する（開発時に依存する）パッケージをリストするフィールド。
+        optionalDependencies	インストールの際に --save-optional オプションを指定したパッケージがリスト
+                                されるフィールド。オプショナル用パッケージをリストするフィールド。
+                                このパッケージが見つからない場合やインストールに失敗した場合もインストールは続行される。
+        private	        プロジェクトを誤って公開しないようにするためのフィールドで true を指定すると公開されない。
+                        このプロパティが true になっていると、publish コマンドが使えないのでモジュールの公開ができない。
+        type	        モジュール方式を指定することができる。指定しない場合は Node.js のデフォルトの CommonJS を
+                        意味する commonjs 。拡張子を .js のままで ES modules を使用する場合は "type": "module"を指定。
+                        type を指定した package.json のあるディレクトリ及びその配下に影響。webpack などを利用している
+                        場合はどちらの方式でも動作するので通常は指定する必要なし。
+7.scripts フィールド
+    ・npm scripts
+        package.json の scripts フィールドにコマンドやスクリプト（npm scripts）を記述しておくとタスク処理ができる。
+    ・npm run-script
+        package.json の scripts フィールドにコマンドやスクリプトを記載すると npm run 〜 でそのコマンドやスクリプトを実行できる。
+            npm run 〜 または npm run-script 〜
+            --silent オプション ： スクリプトの実行結果だけを出力する
+    ・npm start
+        予約されたスクリプト名 (start stop test など) を使うと、
+        npm start、npm stop、npm test といった短縮形のコマンドで実行できる。
+8.package-lock.json
+    package-lock.json を使うと、同じ package.json からのパッケージのインストールを固定された特定のバージョンにすることができる。
+    プロジェクトの複製の際など npm install 実行時に package-lock.json が存在する場合、npm は package-lock.json の内容を元に
+    パッケージをインストールするので同じパッケージ環境を再現することができる。
+    ★プロジェクトをコピーするなら、package.json package-lock.json の両方をコピーすること！！
+9.パッケージを表示 ls
+    インストールされているパッケージを表示する。
+        -g	    グローバルインストールを表示（大量に表示される）
+        --long	詳細情報（extended information）を表示
+        --depth	表示する階層の深さを整数で指定。
+                例：一番上の階層のみを表示 --depth=0
+        --prod	dependencies に記載されているもの（Production）のみを表示
+        --dev	devDependencie に記載されているもの（Development）のみを表示
+10.インストール先/実行ファイルパスの表示
+    npm root    パッケージのインストール先であるルートディレクトリ（node_modules）のパスを表示
+    npm bin     実行ファイル（executables）の保存先のパスを表示
+    npm bin -g  グローバル実行ファイル（executables）の保存先のパスを表示
+    export PATH=$PATH:`npm bin -g`  パスを通す
+                                    ※ターミナルをログアウトするとクリアされる。
+11.パッケージの更新
+    ・更新の確認
+        npm outdated            パッケージに更新（アップデート）があるかを確認
+        npm outdated --long     Package Type と Homepage の項目を追加
+        npm outdated -g         グローバルを確認
+
+        ※表示内容
+            Package ： 更新がある（更新可能な）パッケージの名前
+            Current ： インストール済みのバージョン
+            Wanted  ： 既存のコードを壊すことなくアップデートできる最新バージョン
+            Latest  ： パッケージの最新バージョン
+
+    ・更新
+        npm update パッケージ名
+        npm packageパッケージ名 -g
+
+        ※パッケージ名を省略すると、package.json に記載されている全てのパッケージを更新する。
+        ※メジャーバージョンが変わる場合（例 1.x.x から 2.x.x）は最新のバージョンにならない。
+
+    ・npm-check-updates
+        package.json に記載されているパッケージのバージョンを一括で最新に書き変えてくれる
+        パッケージ。（Node.js のモジュール）
+        グローバルにインストールして使う。
+            npm install -g npm-check-updates
+
+        ncu オプション パッケージ
+        npm-check-updates オプション パッケージ
+
+    ・package.json の書き換え -u（--upgrade）
+        最新版がインストールできるように package.json が書き変えられる。
+            ncu -u
+        package.json 更新後に「npm update」を実施する。
+12.パッケージの削除 npm uninstall
+    $ npm uninstall パッケージ名
+    $ npm un パッケージ名
+    $ npm uninstall -g パッケージ名
+    $ npm un -g パッケージ名
+        ※package.json の書き込みオプション
+        --save -S           dependencies フィールドから削除される
+        --save-dev -D       devDependencies フィールドから削除される
+        --save-optional -O  optionalDe-pendencies フィールドから削除される
+        --no-save           削除されない
+13.npx
+    ・パッケージをコマンド実行する場合、.bin フォルダにあるパッケージコマンドを
+      実行する必要があるが、npx を使用すれば.bin フォルダを指定しなくても実行できる。
+        npx xxxxx
+        ./node_modules/.bin/xxxxx
+        $(npm bin)/xxxxx
+    ・パッケージをインストールしていない状態で、npx コマンドのパッケージ実行を行うと、
+      一時的にグローバルインストールされ、パッケージ実行される。
+      （install → 実行 → uninstall）
