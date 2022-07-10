@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target='_top'>
+  </head>
+  <body>
+    <input type='text' id='counter' name='counter' value=values disabled>
+    <br>values[0]
+    <input type='button' id='countUp' name='countUp' value='１回カウント' onclick='counterUp'>
+  </body>
+  <script>
+    function counterUp() {
+      const counterValue = document.getElementById('counter').value;
+      document.setElementById('counter').value;
+    }
+  </script>
+</html>
