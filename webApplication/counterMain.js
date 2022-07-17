@@ -1,14 +1,7 @@
-let Couter = 0;
+let couter = 0;
 
 function doGet() {
   let template = HtmlService.createTemplateFromFile('index');
+  template.counter = couter;
   return template.evaluate();
-}
-
-function setValue(counter) {
-  Counter = counter;
-}
-
-function getValue() {
-  return Counter;
 }

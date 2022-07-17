@@ -4,14 +4,13 @@
     <base target='_top'>
   </head>
   <body>
-    <input type='text' id='counter' name='counter' value=values disabled>
-    <br>values[0]
-    <input type='button' id='countUp' name='countUp' value='１回カウント' onclick='counterUp'>
+    <input type='text' id='counter' value=<?= counter ?> disabled>
+    <button onclick='upCounter'>１回カウント</button>
+    <script>
+      function upCounter() {
+        const counter = document.getElementById('counter').value;
+        document.getElementById('counter').value = counter + 1;
+      }
+    </script>
   </body>
-  <script>
-    function counterUp() {
-      const counterValue = document.getElementById('counter').value;
-      document.setElementById('counter').value;
-    }
-  </script>
 </html>
