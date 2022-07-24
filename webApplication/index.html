@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target='_top'>
+  </head>
+  <body>
+    <input type='text' id='counter' value=<?= ('00000' + counter).slice(-5) ?> disabled>
+    <br>
+    <button onclick='upCounter(1)'>１回カウント</button>
+
+    <script>
+      /**
+       * カウンターＢＯＸの内容をアップさせる
+       * @param {Number} countNumber  アップさせる数値
+      */
+      function upCounter(countNumber) {
+        // カウンターＢＯＸの内容
+        let counter = Number(document.getElementById('counter').value);
+        // カウンターアップ（上限値を超えたら１から始める）
+        if (counter >= 99999) {
+          counter = 1;
+        } else {
+          counter += countNumber;
+        }
+        // カウンターＢＯＸの内容更新
+        document.getElementById('counter').value = ('00000' + counter).slice(-5);
+      }
+    </script>
+  </body>
+</html>
